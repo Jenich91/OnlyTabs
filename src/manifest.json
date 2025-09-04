@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Only Tabs",
+  "version": "1.0",
+  "permissions": ["activeTab", "tabs", "storage"],
+  "browser_action": {
+    "default_title": "Show tabs",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://tabs.ultimate-guitar.com/*", "*://*.ultimate-guitar.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": { "48": "icon.png" }
+}
